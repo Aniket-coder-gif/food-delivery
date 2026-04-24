@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery - Available Items</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; background-color: #f9f9f9; }
+        h1 { text-align: center; color: #b63b3b; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        th, td { padding: 15px; text-align: left; border-bottom: 1px solid #d6b2b2; }
+        th { background-color: #ffeb3b; font-weight: bold; color: #333; }
+        tr:hover { background-color: #f5f5f5; }
+        .price { font-weight: bold; color: #4caf50; }
+        footer { text-align: center; margin-top: 30px; color: #666; }
+    </style>
+</head>
+<body>
+    <h1> Food Delivery Menu</h1>
+    <p>Available food items (prices in INR):</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Food Name</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% foods.forEach(food => { %>
+            <tr>
+                <td><%= food.name %></td>
+                <td class="price">₹<%= food.price %></td>
+            </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    <footer>
+        <p>Total items: <%= foods.length %> | Powered by Node.js + Express + EJS</p>
+    </footer>
+</body>
+</html>
+
